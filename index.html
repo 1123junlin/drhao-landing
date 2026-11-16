@@ -216,7 +216,7 @@
   .final .light{width:820px;height:820px;left:50%;top:-470px;transform:translateX(-50%);}
   .final .wrap{position:relative;z-index:2;}
   .final p.big{font-family:var(--serif);font-weight:900;font-size:clamp(28px,4.4vw,44px);line-height:1.5;}
-  .final p.big em{color:var(--gold);font-style:normal;}
+  .final p.big em{color:var(--gold);font-style:normal;white-space:nowrap;}
   .final .btn{margin-top:34px;}
   .final small{display:block;margin-top:14px;font-size:13px;color:rgba(251,249,243,.7);}
 
@@ -225,6 +225,11 @@
   footer .logo{width:110px;}
   footer .meta{text-align:right;line-height:1.95;}
   footer .meta span{color:var(--gold);}
+
+  /* ---------- floating button ---------- */
+  .float-btn{position:fixed;right:20px;bottom:calc(20px + env(safe-area-inset-bottom));z-index:60;display:inline-flex;align-items:center;gap:8px;background:var(--navy);color:var(--white);border:1px solid var(--gold);font-size:15px;font-weight:500;letter-spacing:.04em;padding:12px 20px;border-radius:40px;box-shadow:0 10px 26px -10px rgba(14,42,69,.6);transition:transform .2s, background .2s, opacity .3s;}
+  .float-btn:hover{transform:translateY(-2px);background:var(--ink);}
+  .float-btn i{width:7px;height:7px;border-radius:50%;background:var(--gold);flex-shrink:0;}
 
   /* ---------- lightbox ---------- */
   .lb{position:fixed;inset:0;z-index:100;background:rgba(14,42,69,.94);display:none;align-items:flex-start;justify-content:center;overflow:auto;padding:60px 16px 24px;}
@@ -269,6 +274,8 @@
     .final .btn{width:100%;}
     footer .wrap{flex-direction:column;align-items:flex-start;}
     footer .meta{text-align:left;}
+    .float-btn{right:16px;bottom:calc(16px + env(safe-area-inset-bottom));padding:11px 18px;}
+    footer{padding-bottom:96px;}
   }
   @media (prefers-reduced-motion:reduce){
     .reveal{opacity:1;transform:none;transition:none;}
@@ -477,6 +484,8 @@
     <div class="meta">橫跨西醫・中醫・牙醫的醫師職涯社群<br>白袍的專業 ・ <span>人生的光</span><br>© 2026 白袍人生學院 ｜ 晶湛生技有限公司</div>
   </div>
 </footer>
+
+<a class="float-btn" href="https://1123junlin.github.io/drhao-2026-recap/" target="_blank" rel="noopener"><i></i>看活動回顧</a>
 
 <div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="圖片放大檢視"><button type="button" id="lbClose">關閉 ✕</button><img id="lbImg" alt=""></div>
 

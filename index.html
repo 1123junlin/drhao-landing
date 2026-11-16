@@ -168,8 +168,11 @@
   .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
   .cap{font-size:13.5px;color:rgba(251,249,243,.75);margin-top:10px;}
   .cap a{color:var(--white);border-bottom:1px solid var(--gold);}
-  .press{display:grid;grid-template-columns:1.2fr 1fr;grid-template-rows:auto 1fr;gap:10px 16px;align-items:start;}
-  .press .paper{grid-row:span 2;}
+  .press{display:grid;grid-template-columns:1.2fr 1fr;gap:10px 16px;align-items:start;}
+  .press .paper{grid-column:1;grid-row:1 / span 5;align-self:stretch;display:flex;flex-direction:column;}
+  .press .item{grid-column:2;}
+  .press .paper .thumb{flex:1;min-height:190px;height:auto;position:relative;}
+  .press .paper .thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;}
   .paper{position:relative;display:block;background:var(--navy);border:1px solid rgba(94,140,181,.35);overflow:hidden;}
   .paper .thumb{height:190px;overflow:hidden;}
   .paper .thumb img{width:100%;}
@@ -233,7 +236,8 @@
   @media (max-width:960px){
     .topics,.reg-list{grid-template-columns:1fr 1fr;}
     .summit,.people-grid,.proof,.press{grid-template-columns:1fr;}
-    .press .paper{grid-row:auto;}
+    .press .paper,.press .item{grid-column:auto;grid-row:auto;}
+    .press .paper .thumb{flex:none;height:220px;}
     .steps{grid-template-columns:1fr;}
     .mission-grid{grid-template-columns:1fr;gap:10px;}
   }
@@ -350,28 +354,6 @@
   </div>
 </section>
 
-<!-- ===== VALUES & MISSION ===== -->
-<section class="pad tint" id="values">
-  <div class="wrap">
-    <div class="reveal">
-      <div class="eyebrow">WHAT WE BELIEVE</div>
-      <h2 class="h2">我們相信的事，<br>和我們想做的事</h2>
-    </div>
-    <div class="vm-label reveal"><h3>三大核心價值</h3><i></i></div>
-    <div class="vm-grid reveal" style="margin-top:18px;">
-      <div class="vm-val"><div class="k">DIVERSITY</div><h3>多元</h3><div class="bar"></div><p>醫療之外，<br>還有更寬的路。</p></div>
-      <div class="vm-val"><div class="k">SLASH</div><h3>斜槓</h3><div class="bar"></div><p>把專業，<br>長成更多種樣子。</p></div>
-      <div class="vm-val"><div class="k">LIFE</div><h3>人生</h3><div class="bar"></div><p>白袍是職業，<br>不是全部。</p></div>
-    </div>
-    <div class="vm-label reveal"><h3>三大核心使命</h3><i></i></div>
-    <div class="mission-grid">
-      <div class="mission reveal"><div class="n">MISSION 01</div><h4>傳承與創新</h4><p>把前輩走過的路傳下去，也一起探索醫師的新可能。</p></div>
-      <div class="mission reveal"><div class="n">MISSION 02</div><h4>整合與共享</h4><p>串連西醫、中醫、牙醫與跨領域資源，讓經驗彼此共享。</p></div>
-      <div class="mission reveal"><div class="n">MISSION 03</div><h4>篩選與教育</h4><p>替醫師篩選值得學的知識與人，轉化成用得上的課程。</p></div>
-    </div>
-  </div>
-</section>
-
 <!-- ===== 5 TRUST ===== -->
 <section class="pad trust on-dark" id="trust">
   <div class="light"></div>
@@ -393,9 +375,34 @@
           <div class="t"><div class="m-src">經濟日報 A16 ｜ 2025.12.27</div><div class="m-title">白袍人生學院 助醫師開啟多元人生（全版）</div></div>
           <span class="zoom-hint">點圖看全版</span>
         </div>
-        <a class="item" href="https://zh.theicons.com/2026/07/29/dr-hao-academy-2026-summit/" target="_blank" rel="noopener"><div class="m-src">The Icons ｜ 2026.07.29</div><div class="m-title">2026 高峰年會專題報導 ↗</div></a>
-        <a class="item" href="https://views.learneating.com/best-doctor/drchangyihao/" target="_blank" rel="noopener"><div class="m-src">好食課 ｜ 2025.12.10</div><div class="m-title">名醫巡禮：讓醫師不再獨自奮戰的共好平台 ↗</div></a>
+        <a class="item" href="https://zh.theicons.com/2026/08/18/leadership-ip-trust-order/" target="_blank" rel="noopener"><div class="m-src">The Icons ｜ 2026.08.18</div><div class="m-title">領袖 IP 的真正戰場：信任秩序、知識權威與未來定義權 ↗</div></a>
+        <a class="item" href="https://zh.theicons.com/2026/07/29/dr-hao-academy-2026-summit/" target="_blank" rel="noopener"><div class="m-src">The Icons ｜ 2026.07.29</div><div class="m-title">白袍人生學院 2026 高峰年會：當 AI、品牌與醫療經營交會 ↗</div></a>
+        <a class="item" href="https://www.watchmedia01.com/archives/476119" target="_blank" rel="noopener"><div class="m-src">觀傳媒 ｜ 2025.12.30</div><div class="m-title">台北場口碑爆場「白袍人生學院」邀請 77 老大分享自媒體經營祕訣 ↗</div></a>
+        <a class="item" href="https://money.udn.com/money/story/5723/9227248" target="_blank" rel="noopener"><div class="m-src">經濟日報 ｜ 2025.12.26</div><div class="m-title">「白袍人生學院」助醫師開啟多元人生 ↗</div></a>
+        <a class="item" href="https://views.learneating.com/best-doctor/drchangyihao/" target="_blank" rel="noopener"><div class="m-src">好食課 ｜ 2025.12.10</div><div class="m-title">名醫巡禮：張益豪醫師打造讓醫師不再獨自奮戰的共好平台 ↗</div></a>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== VALUES & MISSION ===== -->
+<section class="pad tint" id="values">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow">WHAT WE BELIEVE</div>
+      <h2 class="h2">我們相信的事，<br>和我們想做的事</h2>
+    </div>
+    <div class="vm-label reveal"><h3>三大核心價值</h3><i></i></div>
+    <div class="vm-grid reveal" style="margin-top:18px;">
+      <div class="vm-val"><div class="k">DIVERSITY</div><h3>多元</h3><div class="bar"></div><p>醫療之外，<br>還有更寬的路。</p></div>
+      <div class="vm-val"><div class="k">SLASH</div><h3>斜槓</h3><div class="bar"></div><p>把專業，<br>長成更多種樣子。</p></div>
+      <div class="vm-val"><div class="k">LIFE</div><h3>人生</h3><div class="bar"></div><p>白袍是職業，<br>不是全部。</p></div>
+    </div>
+    <div class="vm-label reveal"><h3>三大核心使命</h3><i></i></div>
+    <div class="mission-grid">
+      <div class="mission reveal"><div class="n">MISSION 01</div><h4>傳承與創新</h4><p>把前輩走過的路傳下去，也一起探索醫師的新可能。</p></div>
+      <div class="mission reveal"><div class="n">MISSION 02</div><h4>整合與共享</h4><p>串連西醫、中醫、牙醫與跨領域資源，讓經驗彼此共享。</p></div>
+      <div class="mission reveal"><div class="n">MISSION 03</div><h4>篩選與教育</h4><p>替醫師篩選值得學的知識與人，轉化成用得上的課程。</p></div>
     </div>
   </div>
 </section>
